@@ -1,1 +1,19 @@
 @import "tailwindcss";
+/* Chrome, Edge, Safari */
+.custom-scroll::-webkit-scrollbar {
+  height: 6px; /* 👈 scrollbar patla */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #9ca3af; /* gray */
+  border-radius: 9999px;
+}
+
+/* 👇 arrows hide */
+.custom-scroll::-webkit-scrollbar-button {
+  display: none;
+}
