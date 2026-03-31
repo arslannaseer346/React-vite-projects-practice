@@ -4,7 +4,7 @@ import Lefttext from './Lefttext'
 import Rightcard from './Rightcard'
 const Hero = () => {
   return (
-    <div className=' flex h-full mx-24 place-content-between '>
+    <div className=' flex h-full mx-24 justify-between '>
     <Lefttext />
     <Rightcard />
     </div>
