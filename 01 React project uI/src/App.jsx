@@ -18,7 +18,10 @@ const App = () => {
       int:'',
       tag:'underbanked'
 },
-
+{img:'https://i.pinimg.com/1200x/b5/5c/0d/b55c0d2229285a0886332b0b4e23268a.jpg',
+      int:'',
+      tag:'underbanked'
+}
   ]
   return (
     <div>
