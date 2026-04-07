@@ -1,5 +1,6 @@
 import React from 'react'
 import Righcardtcontent from './Righcardtcontent'
+import { useFormStatus } from 'react-dom'
 const Rightcard = (props) => {
   return (
 
@@ -10,8 +11,7 @@ const Rightcard = (props) => {
        return ( <Righcardtcontent key={index} id={index+1} img={elem.img} tag={elem.tag}/> )
         })
     }
-   </div>
+    </div> 
   )
 }
-
 export default Rightcard
