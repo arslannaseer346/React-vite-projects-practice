@@ -1,17 +1,36 @@
 import React, { useState } from 'react'
 
 const App = () => {
+
+// use state managing task here
+
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
   const [task, setTask] = useState([]);
+
+  // event handler function working on submition of form button
+
   const SubmitHandler= (e)=>{
     e.preventDefault()
     console.log("form submited");
-    console.log(title);
-    console.log(details);
+
+//copy array to another array bcz previous task also remian
+     const newTask=[...task]
+     newTask.push({title,details})
+     setTask(newTask)
+     
+     
+     
+     
+
+    
     setTitle('')
     setDetails('')
   }
+
+
+  // Ui designed here
+
   return (
     <div className='bg-black h-screen w-full lg:flex text-white gap-5 '>
         <form onSubmit={(e)=>{SubmitHandler(e)}} className='gap-4 p-10 flex-col flex lg:w-1/2 items-start '>
@@ -20,13 +39,22 @@ const App = () => {
           <textarea value={details} onChange={(e)=>{setDetails(e.target.value)}} className='w-full font-medium outline-none h-32 flex items-start px-5 py-2 rounded  border-2' placeholder='Enter Details ' id=""></textarea>
           <button className= 'w-full active:scale-95 bg-white font-medium outline-none text-black px-5 py-2 rounded '>Add Notes</button>
         </form>
+
+
+
+
+
         <div className=' lg:border-l-2 lg:w-1/2 p-10'>
         <h1 className=' text-4xl font-bold'>Recent Notes</h1>
         <div className='flex flex-wrap gap-5 p-2 h-full overflow-auto mt-5 '>
-          <div className='h-52 w-40 rounded-2xl bg-white'></div>
-          <div className='h-52 w-40 rounded-2xl bg-white'></div>
-          <div className='h-52 w-40 rounded-2xl bg-white'></div>
-          <div className='h-52 w-40 rounded-2xl bg-white'></div>
+          {task.map((elem,idx)=>{
+
+          return <div key={idx} className='h-52 w-40 rounded-2xl text-black p-4 bg-white'>
+            <h3 className=' text-xl font-bold leading-tight'>{elem.title}</h3>
+            <p className='mt-2 leading-tight text-gray-500 font-medium'>{elem.details}</p>
+          </div>
+          })}
+          
           
         
         </div>
