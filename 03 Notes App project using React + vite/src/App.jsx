@@ -46,12 +46,16 @@ const App = () => {
 
         <div className=' lg:border-l-2 lg:w-1/2 p-10'>
         <h1 className=' text-4xl font-bold'>Recent Notes</h1>
-        <div className='flex flex-wrap gap-5 p-2 h-full overflow-auto mt-5 '>
+        <div className='flex flex-wrap items-start justify-start gap-5 p-2 h-full overflow-auto mt-5 '>
           {task.map((elem,idx)=>{
 
-          return <div key={idx} className='h-52 w-40 rounded-2xl text-black p-4 bg-white'>
+          return <div key={idx} className="flex justify-between items-start flex-col h-52 w-40 rounded-2xl text-black px-4 pt-5 pb-3 bg-cover bg-[url('https://static.vecteezy.com/system/resources/previews/037/152/677/non_2x/sticky-note-paper-background-free-png.png')]">
+            <div>
             <h3 className=' text-xl font-bold leading-tight'>{elem.title}</h3>
             <p className='mt-2 leading-tight text-gray-500 font-medium'>{elem.details}</p>
+
+            </div>
+            <button className='w-full bg-red-500 py-1 text-xs rounded cursor-pointer active:scale-95 font-bold text-white'>Delete</button>
           </div>
           })}
           
