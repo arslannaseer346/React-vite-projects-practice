@@ -27,7 +27,12 @@ const App = () => {
     setTitle('')
     setDetails('')
   }
-
+//delete notes
+const deleteNotes=(idx)=>{
+ const copyTask=[...task]
+ copyTask.splice(idx,1)
+ setTask(copyTask)
+}
 
   // Ui designed here
 
@@ -55,7 +60,9 @@ const App = () => {
             <p className='mt-2 leading-tight text-gray-500 font-medium'>{elem.details}</p>
 
             </div>
-            <button className='w-full bg-red-500 py-1 text-xs rounded cursor-pointer active:scale-95 font-bold text-white'>Delete</button>
+            <button onClick={()=>{
+              deleteNotes(idx)
+            }} className='w-full bg-red-500 py-1 text-xs rounded cursor-pointer active:scale-95 font-bold text-white'>Delete</button>
           </div>
           })}
           
